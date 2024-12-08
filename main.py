@@ -2,7 +2,8 @@ import csv
 
 # Open the .csv file containing the morse code
 with open("morse.csv", "r") as file:
-    morse_raw = csv.reader(file) # Use the csv module in Python the read the .csv file
+    # Use the csv module in Python the read the .csv file
+    morse_raw = csv.reader(file, delimiter=",", quotechar="'") # configure the parameters to save ',' as a key
     morse_dict = {row[0]: row[1] for row in morse_raw} # Convert the .csv file to dictionary
 
 # Ask for user input
